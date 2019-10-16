@@ -14,13 +14,13 @@ import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 # from sklearn.metrics import accuracy_score
 # from sklearn.model_selection import train_test_split
 
-# import nltk
-# from nltk.corpus import stopwords
-# from nltk.classify import SklearnClassifier
-# from nltk import sent_tokenize, word_tokenize, pos_tag
-# from nltk.tokenize import RegexpTokenizer
-# from nltk.stem import WordNetLemmatizer, PorterStemmer
-# from nltk import FreqDist
+import nltk
+from nltk.corpus import stopwords
+from nltk.classify import SklearnClassifier
+from nltk import sent_tokenize, word_tokenize, pos_tag
+from nltk.tokenize import RegexpTokenizer
+from nltk.stem import WordNetLemmatizer, PorterStemmer
+from nltk import FreqDist
 
 # from wordcloud import WordCloud, STOPWORDS
 
@@ -74,3 +74,5 @@ pd_data['text'].apply(lambda x: word_lemmatizer(x))
 
 # Stemmer
 pd_data['text'].apply(lambda x: word_stemmer(x))
+
+print(pd_data.head(3))
