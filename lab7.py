@@ -34,7 +34,6 @@ from nltk import FreqDist
 pd_data = pd.read_csv('data.csv')
 pd_data = pd_data[['text']]
 
-print(pd_data.head(3))
 
 # Puntuacion
 def remove_punctuation(text): 
@@ -75,4 +74,22 @@ pd_data['text'].apply(lambda x: word_lemmatizer(x))
 # Stemmer
 pd_data['text'].apply(lambda x: word_stemmer(x))
 
-print(pd_data.head(3))
+countA = 0
+countB = 0
+countC = 0
+
+for t in pd_data['text']:
+    for i in t:
+        if i == "accidente":
+            countA = countA + 1
+
+for t in pd_data['text']:
+    for i in t:
+        if i == "lluvia":
+            countB = countB + 1
+			
+print("La cantidad de accidentes reportados en la última semana es: ", countA)
+
+print("Tráfico causado por:")
+print("Accidentes: ", countA)
+print("Clima: ", countB)
