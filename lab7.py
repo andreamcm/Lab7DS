@@ -3,6 +3,7 @@
 # Autores:                             #
 #   Andrea Cordón, 16076               #
 #   Cristopher Recinos, 16005          #
+#   Pablo Lopez, 14509                 #
 # lab7.py                              #
 # ------------------------------------ #
 
@@ -15,6 +16,7 @@ import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 # from sklearn.model_selection import train_test_split
 
 import nltk
+#nltk.download('wordnet') #Use this line once to download.
 from nltk.corpus import stopwords
 from nltk.classify import SklearnClassifier
 from nltk import sent_tokenize, word_tokenize, pos_tag
@@ -77,19 +79,46 @@ pd_data['text'].apply(lambda x: word_stemmer(x))
 countA = 0
 countB = 0
 countC = 0
+countD = 0
+countE = 0
+countF = 0
 
 for t in pd_data['text']:
     for i in t:
-        if i == "accidente":
+        if i == "mixco":
             countA = countA + 1
 
 for t in pd_data['text']:
     for i in t:
-        if i == "lluvia":
+        if i == "roosevelt":
             countB = countB + 1
-			
-print("La cantidad de accidentes reportados en la última semana es: ", countA)
 
-print("Tráfico causado por:")
-print("Accidentes: ", countA)
-print("Clima: ", countB)
+for t in pd_data['text']:
+    for i in t:
+        if i == "periferico":
+            countC = countC + 1
+
+for t in pd_data['text']:
+    for i in t:
+        if i == "cristóbal":
+            countD = countD + 1
+
+for t in pd_data['text']:
+    for i in t:
+        if i == "próceres":
+            countE = countE + 1
+
+for t in pd_data['text']:
+    for i in t:
+        if i == "lobos":
+            countF = countF + 1
+			
+#print("La cantidad de accidentes reportados en la última semana es: ", countA)
+
+print("Mayores zonas con trafico:")
+print("Mixco: ", countA)
+print("Roosevelt: ", countB)
+print("Periferico: ", countC)
+print("San Cristobal: ", countD)
+print("proceres: ", countE)
+print("Villa Lobos: ", countF)
